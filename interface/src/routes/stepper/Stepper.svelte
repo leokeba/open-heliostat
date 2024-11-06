@@ -7,6 +7,8 @@
 	import StepperStatusComp from '$lib/components/StepperStatusComp.svelte';
 	import StepperControlComp from '$lib/components/StepperControlComp.svelte';
 	import StepperSettingsComp from '$lib/components/StepperSettingsComp.svelte';
+	import StepperStopComp from '$lib/components/StepperStopComp.svelte';
+
 
 	const stepperControlEvent = "steppercontrol"
 	const stepperSettingsEvent = "steppersettings"
@@ -45,6 +47,10 @@
 			stepperSettings={steppersSettings?.steppers[i]}
 			onChange={() => socket.sendEvent(stepperSettingsEvent, steppersSettings)}
 		></StepperSettingsComp>
+		<StepperStopComp 
+			{stepperControl}
+			onChange={() => socket.sendEvent(stepperControlEvent, steppersControl)}
+		></StepperStopComp>
 	</div>
 </SettingsCard>
 {/each}

@@ -51,13 +51,3 @@
 		{onChange}
 	></Slider>
 </div>
-<div class="flex flex-row flex-wrap justify-between gap-x-2">
-	<div class="flex-grow"></div>
-	<div>
-		<div>
-			<button class="btn btn-primary inline-flex items-center" on:click={() => {stepperControl.speed=0; onChange();}}
-				><Stop class="mr-2 h-5 w-5" /><span>Stop</span></button
-			>
-		</div>
-	</div>
-</div>
